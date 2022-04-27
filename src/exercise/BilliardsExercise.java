@@ -2,7 +2,7 @@ package exercise;
 
 import java.util.Scanner;
 
-public class BadmintonExercise extends Exercise {
+public class BilliardsExercise extends Exercise{
 	
 	public void getUserInput(Scanner sc) {
 		System.out.print("date");
@@ -12,29 +12,28 @@ public class BadmintonExercise extends Exercise {
 		System.out.print("time(miniute)");
 		int time = sc.nextInt();
 		this.setTime(time);
-
-		System.out.print("where");
-		String where = sc.next();
-		this.setWhere(where);
-
+		
 		char answer ='x';
+		
 		while(answer != 'y' && answer != 'Y'&&answer != 'n' && answer != 'N') {
-
-			System.out.print("Do you have an partner ? y/n");
+			System.out.print("´Ã °¡´ø°÷ ? y/n");
 			answer = sc.next().charAt(0);
 			if(answer == 'y' || answer == 'Y') {
-				System.out.print("partner");
-				String partner = sc.next();
-				this.setPartner(partner);
+				String where = "¸á·Ð´ç±¸Àå";
+				this.setWhere(where);
 				break;
 			}
 			else if(answer =='n' || answer == 'N') {
-				this.setPartner("");
+				this.setWhere("");
 				break;
 			}
 			else {
 
 			}
 		}
+
+		System.out.print("partner");
+		String partner = sc.next();
+		this.setPartner(partner);
 	}
 }
