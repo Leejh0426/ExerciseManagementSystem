@@ -3,7 +3,6 @@ package exercise;
 public enum ExerciseKind {
 	Health,
 	Badminton,
-	Football,
-	Bowling,
+	football,
 	Billiards,
 }

@@ -2,7 +2,7 @@ package exercise;
 
 import java.util.Scanner;
 
-public class Exercise {
+public abstract class Exercise {
 	protected ExerciseKind kind = ExerciseKind.Health;
 
 	protected String date;
@@ -12,6 +12,10 @@ public class Exercise {
 	
 	public Exercise() {
 		
+	}
+	
+	public Exercise(ExerciseKind kind) {
+		this.kind = kind;
 	}
 	
 	public Exercise(String date) {
@@ -66,25 +70,9 @@ public class Exercise {
 	}
 
 	
-	public void printInfo() {
-		System.out.println("date" + date + "time" + time + "where" + where + "partner" + partner);
-	}
-	
-	public void getUserInput(Scanner sc) {
-		System.out.print("date");
-		String date = sc.next();
-		this.setDate(date);
-		
-		System.out.print("time(miniute)");
-		int time = sc.nextInt();
-		this.setTime(time);
-		
-		System.out.print("where");
-		String where = sc.next();
-		this.setWhere(where);
-		
-		System.out.print("partner");
-		String partner = sc.next();
-		this.setPartner(partner);
-	}
+	public abstract void printInfo();
 }
+
+
+
+

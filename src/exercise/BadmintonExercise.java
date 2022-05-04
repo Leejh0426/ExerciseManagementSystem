@@ -2,7 +2,11 @@ package exercise;
 
 import java.util.Scanner;
 
-public class BadmintonExercise extends Exercise {
+public class BadmintonExercise extends Exercise implements ExerciseInput{
+	
+	public BadmintonExercise(ExerciseKind kind) {
+		super(kind);
+	}
 	
 	public void getUserInput(Scanner sc) {
 		System.out.print("date");
@@ -36,5 +40,9 @@ public class BadmintonExercise extends Exercise {
 
 			}
 		}
+	}
+	
+	public void printInfo() {
+		System.out.println("kind : "+ kind + " date : " + date + " time : " + time + " where : " + where + " partner : " + partner);
 	}
 }

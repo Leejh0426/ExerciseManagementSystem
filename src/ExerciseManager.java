@@ -4,9 +4,12 @@ import java.util.Scanner;
 import exercise.BadmintonExercise;
 import exercise.BilliardsExercise;
 import exercise.Exercise;
+import exercise.ExerciseInput;
+import exercise.ExerciseKind;
+import exercise.HealthExercise;
 
 public class ExerciseManager {
-	ArrayList<Exercise> exercises = new ArrayList<Exercise>();
+	ArrayList<ExerciseInput> exercises = new ArrayList<ExerciseInput>();
 	Scanner sc;
 
 	public ExerciseManager(Scanner sc) {
@@ -16,33 +19,33 @@ public class ExerciseManager {
 
 	public void AddExercise() {
 		int kind = 0;
-		Exercise exercise;
+		ExerciseInput exerciseinput;
 		while (kind != 1 && kind !=2 && kind!=3) {
-			System.out.print("1 for others ");
+			System.out.print("1 for Health ");
 			System.out.print("2 for Badminton ");
 			System.out.print("3 for Billiards");
 			System.out.print(".Select num for Exercise Kind 1,2 and 3:");
 			kind = sc.nextInt();
 			if(kind == 1) {
-				exercise = new Exercise();
-				exercise.getUserInput(sc);
-				exercises.add(exercise);
+				exerciseinput = new HealthExercise(ExerciseKind.Health);
+				exerciseinput.getUserInput(sc);
+				exercises.add(exerciseinput);
 				break;
 			}
 			else if (kind ==2) {
-				exercise = new BadmintonExercise();
-				exercise.getUserInput(sc);
-				exercises.add(exercise);
+				exerciseinput = new BadmintonExercise(ExerciseKind.Badminton);
+				exerciseinput.getUserInput(sc);
+				exercises.add(exerciseinput);
 				break;
 			}
 			else if (kind ==3) {
-				exercise = new BilliardsExercise();
-				exercise.getUserInput(sc);
-				exercises.add(exercise);
+				exerciseinput = new BilliardsExercise(ExerciseKind.Billiards);
+				exerciseinput.getUserInput(sc);
+				exercises.add(exerciseinput);
 				break;
 			}
 			else {
-				System.out.print("Select num for Exercise Kind between 1 and 2:");
+				System.out.print("Select num for Exercise Kind between 1,2 and 3:");
 			}
 		}
 	}
@@ -60,7 +63,7 @@ public class ExerciseManager {
 
 		if (index>= 0) {
 			exercises.remove(index);
-			System.out.println("the exercise" + exercisedate + "has not been deleted");	
+			System.out.println("the exercise" + exercisedate + "has been deleted");	
 		}
 
 		else {
@@ -73,9 +76,9 @@ public class ExerciseManager {
 		System.out.print("date");
 		String exercisedate = sc.next();
 		for(int i=0; i<exercises.size(); i++) {
-			Exercise exercise = exercises.get(i);
+			ExerciseInput exerciseinput = exercises.get(i);
 
-			if (exercise.getDate().equals(exercisedate)) {
+			if (exerciseinput.getDate().equals(exercisedate)) {
 				int num = -1;
 				while (num != 5) {
 					System.out.println("**Exercise Info Edit Menu **");
@@ -89,26 +92,26 @@ public class ExerciseManager {
 					if(num == 1) {
 						System.out.print("Exercise date");
 						String date = sc.next();
-						exercise.setDate(date);
+						exerciseinput.setDate(date);
 					}
 
 
 					else if(num == 2) {
 						System.out.print("time(miniute)");
 						int time = sc.nextInt();
-						exercise.setTime(time);
+						exerciseinput.setTime(time);
 					}
 
 					else if(num == 3) {
 						System.out.print("where");
 						String where = sc.next();
-						exercise.setWhere(where);
+						exerciseinput.setWhere(where);
 					}
 
 					else if(num ==4) {
 						System.out.print("partner");
 						String partner = sc.next();
-						exercise.setPartner(exercisedate);
+						exerciseinput.setPartner(partner);
 					}
 
 					else
