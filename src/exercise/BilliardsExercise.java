@@ -2,7 +2,9 @@ package exercise;
 
 import java.util.Scanner;
 
-public class BilliardsExercise extends Exercise implements ExerciseInput{
+public class BilliardsExercise extends Exercise{
+	
+	protected String where = "¸á·Ð´ç±¸Àå";
 	
 	public BilliardsExercise(ExerciseKind kind) {
 		super(kind);
@@ -10,13 +12,10 @@ public class BilliardsExercise extends Exercise implements ExerciseInput{
 	
 	
 	public void getUserInput(Scanner sc) {
-		System.out.print("date");
-		String date = sc.next();
-		this.setDate(date);
 
-		System.out.print("time(miniute)");
-		int time = sc.nextInt();
-		this.setTime(time);
+		setExerciseDate(sc);
+
+		setExerciseTime(sc);
 		
 		char answer ='x';
 		
@@ -24,12 +23,10 @@ public class BilliardsExercise extends Exercise implements ExerciseInput{
 			System.out.print("´Ã °¡´ø°÷ ? y/n");
 			answer = sc.next().charAt(0);
 			if(answer == 'y' || answer == 'Y') {
-				String where = "¸á·Ð´ç±¸Àå";
-				this.setWhere(where);
 				break;
 			}
 			else if(answer =='n' || answer == 'N') {
-				this.setWhere("");
+				setExerciseWhere(sc);
 				break;
 			}
 			else {
@@ -37,12 +34,14 @@ public class BilliardsExercise extends Exercise implements ExerciseInput{
 			}
 		}
 
-		System.out.print("partner");
-		String partner = sc.next();
-		this.setPartner(partner);
+		setExercisePartner(sc);
 	}
 	
 	public void printInfo() {
 		System.out.println("kind : "+ kind + " date : " + date + " time : " + time + " where : " + where + " partner : " + partner);
+	}
+	
+	public void setWhere(String where) {
+		this.where = where;
 	}
 }
