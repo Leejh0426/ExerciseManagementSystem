@@ -1,18 +1,22 @@
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
 import exercise.BadmintonExercise;
 import exercise.BilliardsExercise;
-import exercise.Exercise;
 import exercise.ExerciseInput;
 import exercise.ExerciseKind;
 import exercise.HealthExercise;
 
-public class ExerciseManager {
+public class ExerciseManager implements Serializable {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -7009346474061858468L;
+	
 	ArrayList<ExerciseInput> exercises = new ArrayList<ExerciseInput>();
-	Scanner sc;
-
+	transient Scanner sc;
 	public ExerciseManager(Scanner sc) {
 		this.sc = sc;
 	}

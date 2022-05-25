@@ -1,11 +1,17 @@
 package exercise;
 
+import java.io.Serializable;
 import java.util.Scanner;
 
 import exception.DateFormatException;
 import exception.PartnerFormatException;
 
-public abstract class Exercise implements ExerciseInput {			//인터페이스 안에있는건 무조건 구현 나머지는 추가적으로 알아서.
+public abstract class Exercise implements ExerciseInput, Serializable {			//인터페이스 안에있는건 무조건 구현 나머지는 추가적으로 알아서.
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -8446976522937507781L;
+
 	protected ExerciseKind kind = ExerciseKind.Health;
 
 	protected String date;

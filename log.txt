@@ -1,0 +1,2 @@
+5¿ù 19, 2022 3:09:11 ¿ÀÈÄ log.EventLogger log
+INFO: view a student
