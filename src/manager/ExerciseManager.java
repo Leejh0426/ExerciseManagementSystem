@@ -1,3 +1,4 @@
+package manager;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.InputMismatchException;
@@ -5,6 +6,7 @@ import java.util.Scanner;
 
 import exercise.BadmintonExercise;
 import exercise.BilliardsExercise;
+import exercise.Exercise;
 import exercise.ExerciseInput;
 import exercise.ExerciseKind;
 import exercise.HealthExercise;
@@ -148,5 +150,13 @@ public class ExerciseManager implements Serializable {
 		for(int i = 0; i<exercises.size(); i++) {
 			exercises.get(i).printInfo();
 		}
+	}
+	
+	public int size() {
+		return exercises.size();
+	}
+	
+	public ExerciseInput get(int index) {
+		return (Exercise)exercises.get(index); 
 	}
 }

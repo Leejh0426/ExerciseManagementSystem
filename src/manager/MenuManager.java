@@ -1,3 +1,4 @@
+package manager;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -7,6 +8,7 @@ import java.io.ObjectOutputStream;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
+import gui.WindowFrame;
 import log.EventLogger;
 
 public class MenuManager {
@@ -21,7 +23,7 @@ public class MenuManager {
 			Exercisemanager = new ExerciseManager(sc);
 		}
 
-		
+		WindowFrame frame = new WindowFrame(Exercisemanager );
 		selectMenu(sc,Exercisemanager);
 		putObject(Exercisemanager, "studentmanager.ser");
 

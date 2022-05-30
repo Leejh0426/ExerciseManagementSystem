@@ -13,9 +13,15 @@ public interface ExerciseInput {
 	
 	public void setTime(int time);
 	
+	public int getTime();
+	
 	public void setWhere(String where);
 	
+	public String getWhere();
+	
 	public void setPartner(String partner) throws PartnerFormatException;
+	
+	public String getPartner();
 	
 	public void printInfo();
 	
