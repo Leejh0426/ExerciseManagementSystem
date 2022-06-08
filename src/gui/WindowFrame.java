@@ -18,7 +18,7 @@ public class WindowFrame extends JFrame{
 	public WindowFrame(ExerciseManager Exercisemanager) {
 		this.Exercisemanager = Exercisemanager;
 		this.menuselection = new MenuSelection(this);
-		this.exerciseadder = new ExerciseAdder(this);
+		this.exerciseadder = new ExerciseAdder(this,this.Exercisemanager);
 		this.exerciseviewer = new ExerciseViewer(this,this.Exercisemanager);
 
 		this.setSize(500,300);

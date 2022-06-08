@@ -18,14 +18,14 @@ public class MenuManager {
 		
 		
 		Scanner sc = new Scanner(System.in);
-		ExerciseManager Exercisemanager = getObject("studentmanager.ser");
+		ExerciseManager Exercisemanager = getObject("exercisemanager.ser");
 		if(Exercisemanager == null) {
 			Exercisemanager = new ExerciseManager(sc);
 		}
 
 		WindowFrame frame = new WindowFrame(Exercisemanager );
 		selectMenu(sc,Exercisemanager);
-		putObject(Exercisemanager, "studentmanager.ser");
+		putObject(Exercisemanager, "exercisemanager.ser");
 
 	} 														//main }
 

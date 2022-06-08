@@ -7,6 +7,8 @@ import exception.DateFormatException;
 import exception.PartnerFormatException;
 
 public abstract class Exercise implements ExerciseInput, Serializable {			//인터페이스 안에있는건 무조건 구현 나머지는 추가적으로 알아서.
+
+
 	/**
 	 * 
 	 */

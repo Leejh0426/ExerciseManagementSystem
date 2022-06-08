@@ -12,15 +12,23 @@ import exercise.ExerciseKind;
 import exercise.HealthExercise;
 
 public class ExerciseManager implements Serializable {
+
+
 	/**
 	 * 
 	 */
-	private static final long serialVersionUID = -7009346474061858468L;
-	
+	private static final long serialVersionUID = -432861592569427201L;
+
 	ArrayList<ExerciseInput> exercises = new ArrayList<ExerciseInput>();
+	
 	transient Scanner sc;
+	
 	public ExerciseManager(Scanner sc) {
 		this.sc = sc;
+	}
+	
+	public void addExercise(ExerciseInput exerciseInput) {
+		exercises.add(exerciseInput);
 	}
 
 
